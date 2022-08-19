@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasource-mapping>
+    <datasource>
+        <catalog-connection-name>Connection1</catalog-connection-name>
+        <connection-type>JNDI</connection-type>
+        <jndi-datasource>ProdSample</jndi-datasource>
+    </datasource>
+    <datasource>
+        <catalog-connection-name>Connection2</catalog-connection-name>
+        <connection-type>JDBC</connection-type>
+        <driver>sun.jdbc.odbc.JdbcOdbcDriver</driver>
+        <url>jdbc:odbc:jinfonet</url>
+        <user>Username</user>
+        <password>Password</password>
+    </datasource>
+</datasource-mapping>

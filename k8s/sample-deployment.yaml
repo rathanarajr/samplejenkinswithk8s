@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample
+  template:
+    metadata:
+      labels:
+        app: sample
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: sample
+        image: artifactory.platformdxc-mg.com/lma-docker/sample-image
+        resources:
+          requests:
+            cpu: 200m
+            memory: 512Mi
+          limits:
+            cpu: 500m
+            memory: 1024Mi
+        ports:
+        - containerPort: 8080
+        env:
+        - name: an_env_var 
+          value: ENV 
+      imagePullSecrets:
+      - name: lma-jfrog-docker-registry
